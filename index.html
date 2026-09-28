@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Matos Consórcios | Planejamento Patrimonial Inteligente</title>
+<meta name="description" content="Consultoria especializada em consórcio para aquisição de imóveis e automóveis de alto padrão. Estratégia, planejamento e acompanhamento até a contemplação com Lucas Matos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- O fundo da hero é o maior elemento da primeira tela: precarrega a versão certa -->
+<link rel="preload" as="image" href="assets/img/hero-bg-mobile.webp" media="(max-width:768px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-bg.webp" media="(min-width:769px)" fetchpriority="high">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#topo" class="logo">
+      <span class="logo-mark">LM</span>
+      <span class="logo-text">Lucas Matos<small>CONSÓRCIOS</small></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#estrategia">Estratégia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#simulador" class="btn btn-primary btn-sm">Solicitar Simulação</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Planejamento Patrimonial Inteligente</p>
+      <h1>Conquiste o seu patrimônio com <span class="text-accent">estratégia</span>, não com juros.</h1>
+      <p class="hero-text">
+        Consultoria especializada em consórcio para aquisição de imóveis e automóveis de alto padrão,
+        sem os juros do financiamento tradicional, com estratégia desenhada para o seu perfil financeiro
+        e acompanhamento até a contemplação.
+      </p>
+      <div class="hero-actions">
+        <a href="#estrategia" class="btn btn-primary">Saiba Como Funciona</a>
+      </div>
+    </div>
+
+    <div class="hero-form-card" id="simulador">
+      <h2 class="sim-title">Você está perto de realizar o seu projeto de vida</h2>
+
+      <form class="sim-form" id="hero-form">
+
+        <div class="sim-step" id="sim-step-1">
+          <div class="sim-field">
+            <span class="sim-label">Selecione um tipo de consórcio</span>
+            <div class="sim-select-wrap">
+              <select id="sim-tipo" name="tipo">
+                <option value="imoveis">Imóveis</option>
+                <option value="automoveis">Automóveis</option>
+              </select>
+              <svg class="sim-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+
+          <div class="sim-field">
+            <span class="sim-label">Simular Plano por</span>
+            <div class="sim-toggle" role="tablist">
+              <button type="button" class="sim-toggle-btn active" data-mode="parcela" role="tab" aria-selected="true">Parcela</button>
+              <button type="button" class="sim-toggle-btn" data-mode="credito" role="tab" aria-selected="false">Crédito</button>
+            </div>
+          </div>
+
+          <div class="sim-field">
+            <span class="sim-label" id="sim-value-label">Valor da parcela</span>
+            <div class="sim-value-box">
+              <span class="sim-currency">R$</span>
+              <input type="text" id="sim-value-input" inputmode="numeric" value="4.000,00">
+            </div>
+          </div>
+
+          <div class="sim-field">
+            <input type="range" id="sim-range" class="sim-range" min="269.84" max="8534.62" step="1" value="4000">
+            <div class="sim-range-labels">
+              <span id="sim-range-min">R$ 269,84</span>
+              <span id="sim-range-max">R$ 8.534,62</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block sim-submit" id="sim-next-btn">Simule seu consórcio</button>
+        </div>
+
+        <div class="sim-step" id="sim-step-2" hidden>
+          <div class="sim-field">
+            <span class="sim-label">Nome</span>
+            <input type="text" id="sim-nome" class="sim-input" name="nome" placeholder="Insira seu nome" required>
+          </div>
+
+          <div class="sim-field">
+            <span class="sim-label">E-mail</span>
+            <input type="email" id="sim-email" class="sim-input" name="email" placeholder="Insira seu e-mail" required>
+          </div>
+
+          <div class="sim-field">
+            <span class="sim-label">Celular</span>
+            <input type="tel" id="sim-celular" class="sim-input" name="celular" placeholder="Insira seu celular" required>
+          </div>
+
+          <label class="sim-checkbox">
+            <input type="checkbox" id="sim-terms" required>
+            <span>Aceito os <a href="#" class="sim-terms-link">Termos de Privacidade</a>.</span>
+          </label>
+
+          <div class="sim-step-actions">
+            <button type="button" class="btn btn-ghost" id="sim-back-btn">Voltar</button>
+            <button type="submit" class="btn btn-primary sim-result-btn" id="sim-result-btn" disabled>Receber simulação</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= SOBRE O ESPECIALISTA ================= -->
+<section class="about" id="sobre">
+  <div class="container about-inner">
+    <div class="about-photo">
+      <div class="photo-placeholder">
+        <img src="assets/img/lucas-matos.webp" alt="Lucas Matos, especialista em consórcio" class="about-photo-img" width="864" height="1080" loading="lazy" decoding="async">
+      </div>
+
+      <div class="photo-glass-badge photo-glass-badge--2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>+300 clientes</span>
+      </div>
+
+      <div class="photo-glass-badge photo-glass-badge--3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>+5 anos de experiência</span>
+      </div>
+
+      <div class="photo-glass-badge photo-glass-badge--4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6Z"/></svg>
+        <span>+1 sonho realizado</span>
+      </div>
+
+      <div class="photo-glass-badge photo-glass-badge--5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>Consórcio fechado</span>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <p class="eyebrow">Sobre o Especialista</p>
+      <h2>Um <span class="text-accent">consultor</span>, não um vendedor de cotas.</h2>
+      <p>
+        Sou Lucas Matos, especialista em consórcio e planejamento patrimonial. Meu trabalho começa antes
+        da carta de crédito: entendo o seu momento financeiro, o bem que você deseja conquistar e o prazo
+        real em que isso precisa acontecer. Só então desenhamos a estratégia.
+      </p>
+      <p>
+        Atendo famílias e investidores que buscam uma alternativa inteligente ao financiamento tradicional
+        para adquirir imóveis e automóveis de alto padrão. A diferença não está no produto. Está na
+        estratégia de escolha do grupo, no timing do lance e no acompanhamento até a chave na mão.
+      </p>
+      <p>
+        Atendimento consultivo, exclusivo e transparente, presencial em <strong>Serra/ES</strong>
+        ou de forma remota para todo o Brasil.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number">+5</span>
+          <span class="stat-label">Anos de experiência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">+300</span>
+          <span class="stat-label">Clientes atendidos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">R$ 100 milhões</span>
+          <span class="stat-label">Em cartas contempladas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Taxa de indicação</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= ESTRATÉGIA ================= -->
+<section class="strategy" id="estrategia">
+  <div class="container">
+    <p class="eyebrow eyebrow-light center">Entenda a Estratégia</p>
+    <h2 class="section-title light center">Consórcio é <span class="text-accent">planejamento</span>.<br>Não é sorte.</h2>
+    <p class="section-lead light center">
+      O consórcio é um sistema de autofinanciamento coletivo regulado pelo Banco Central. Um grupo de
+      pessoas com o mesmo objetivo forma uma poupança comum e, mês a mês, seus integrantes são
+      contemplados com uma carta de crédito para adquirir o bem desejado. Não há juros: você paga o
+      valor do crédito corrigido e uma taxa de administração conhecida desde o primeiro dia.
+    </p>
+
+    <div class="cards-3">
+      <div class="card-dark">
+        <h3>Disciplina financeira</h3>
+        <p>Uma parcela mensal previsível que organiza o orçamento e transforma intenção em patrimônio, sem comprometer a liquidez do seu caixa.</p>
+      </div>
+      <div class="card-dark">
+        <h3>Custo previsível</h3>
+        <p>Você conhece a taxa de administração e o prazo desde a assinatura. Sem surpresa de juros compostos ao longo de duas décadas.</p>
+      </div>
+      <div class="card-dark">
+        <h3>Poder de negociação</h3>
+        <p>A carta contemplada funciona como pagamento à vista, o que abre espaço para descontos relevantes na compra do imóvel ou do automóvel.</p>
+      </div>
+    </div>
+
+    <div class="compare-table-wrap">
+      <h3 class="compare-title">Consórcio <span class="text-accent">×</span> Financiamento</h3>
+      <p class="compare-sub">Comparativo entre consórcio e financiamento bancário tradicional</p>
+      <div class="table-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr><th>Critério</th><th class="col-highlight">Consórcio</th><th>Financiamento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Juros</td><td class="col-highlight">Não há juros, apenas taxa de administração</td><td>Juros compostos por todo o contrato</td></tr>
+            <tr><td>Valor da parcela</td><td class="col-highlight">Significativamente menor</td><td>Elevada desde a primeira parcela</td></tr>
+            <tr><td>Entrada</td><td class="col-highlight">Não exige entrada</td><td>Normalmente 20% a 30% do bem</td></tr>
+            <tr><td>Poder de compra</td><td class="col-highlight">Compra à vista, permite negociar desconto</td><td>Compra financiada, sem margem de negociação</td></tr>
+            <tr><td>Acesso ao bem</td><td class="col-highlight">Na contemplação (sorteio ou lance estratégico)</td><td>Imediato, com custo total muito superior</td></tr>
+            <tr><td>Flexibilidade</td><td class="col-highlight">Crédito pode ser usado em qualquer bem da categoria</td><td>Vinculado ao bem aprovado pelo banco</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-hint">Arraste a tabela para o lado para ver todas as colunas →</p>
+      <p class="table-footnote">Comparativo ilustrativo com finalidade educativa. Condições variam conforme administradora, grupo, prazo e perfil do contratante.</p>
+    </div>
+
+    <div class="center strategy-cta">
+      <a href="#simulador" class="btn btn-primary">Quero simular o meu consórcio</a>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= 5 ETAPAS ================= -->
+<section class="steps" id="metodo">
+  <div class="container">
+    <p class="eyebrow center">A Consultoria</p>
+    <h2 class="section-title center">Cinco etapas do plano à <span class="text-accent">chave na mão</span>.</h2>
+    <p class="section-lead center">
+      Um método de acompanhamento contínuo, do primeiro diagnóstico financeiro ao pós-contemplação.
+      Você nunca fica sozinho com a administradora.
+    </p>
+
+    <div class="steps-carousel" id="steps-carousel">
+      <div class="step-panel active" data-index="0" style="background-image:url('assets/img/step-01-analise-perfil.webp')">
+        <span class="step-num">01</span>
+        <div class="step-panel-content">
+          <span class="step-pill">Diagnóstico</span>
+          <h3>Análise de perfil financeiro</h3>
+          <p>Mapeamos renda, capacidade de parcela, reservas disponíveis e objetivo patrimonial. É aqui que definimos se o consórcio é, de fato, a melhor ferramenta para o seu caso.</p>
+          <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="step-cta">Conversar ↗</a>
+        </div>
+      </div>
+      <div class="step-panel" data-index="1" style="background-image:url('assets/img/step-02-escolha-grupo.webp')">
+        <span class="step-num">02</span>
+        <div class="step-panel-content">
+          <span class="step-pill">Estratégia</span>
+          <h3>Estratégia e escolha do grupo ideal</h3>
+          <p>Seleção criteriosa da administradora, do valor da carta, do prazo e do grupo com o melhor histórico de contemplação para o seu objetivo.</p>
+          <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="step-cta">Conversar ↗</a>
+        </div>
+      </div>
+      <div class="step-panel" data-index="2" style="background-image:url('assets/img/step-03-contemplacao.webp')">
+        <span class="step-num">03</span>
+        <div class="step-panel-content">
+          <span class="step-pill">Acompanhamento</span>
+          <h3>Acompanhamento até a contemplação</h3>
+          <p>Monitoramento das assembleias e planejamento do lance estratégico (embutido, livre ou com recursos próprios) para antecipar a conquista do seu bem.</p>
+          <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="step-cta">Conversar ↗</a>
+        </div>
+      </div>
+      <div class="step-panel" data-index="3" style="background-image:url('assets/img/step-04-aquisicao-bem.webp')">
+        <span class="step-num">04</span>
+        <div class="step-panel-content">
+          <span class="step-pill">Aquisição</span>
+          <h3>Suporte na aquisição do bem</h3>
+          <p>Apoio na avaliação do imóvel ou do automóvel, análise documental, negociação com o vendedor e liberação do crédito junto à administradora.</p>
+          <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="step-cta">Conversar ↗</a>
+        </div>
+      </div>
+      <div class="step-panel" data-index="4" style="background-image:url('assets/img/step-05-pos-contemplacao.webp');background-position:center top;">
+        <span class="step-num">05</span>
+        <div class="step-panel-content">
+          <span class="step-pill">Pós-venda</span>
+          <h3>Acompanhamento pós-contemplação</h3>
+          <p>Gestão do saldo devedor, reduções de parcela, uso estratégico de novas cotas e planejamento dos próximos passos do seu patrimônio.</p>
+          <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="step-cta">Conversar ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <a href="#simulador" class="btn btn-primary">Quero iniciar minha análise de perfil</a>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= TIPOS DE BENS ================= -->
+<section class="assets" id="servicos">
+  <div class="container">
+    <p class="eyebrow center">Tipos de Bens</p>
+    <h2 class="section-title center">O que você pode <span class="text-accent">conquistar</span>.</h2>
+
+    <div class="assets-grid">
+      <a href="#simulador" class="asset-card">
+        <div class="asset-media asset-media--imovel"></div>
+        <div class="asset-body">
+          <h3>Imóveis de Alto Padrão</h3>
+          <p>Casas, apartamentos, terrenos, salas comerciais e imóveis para investimento. A carta de crédito também pode ser usada para construção, reforma ou para quitar um financiamento em andamento, trocando juros por taxa de administração.</p>
+          <span class="asset-link">Quero um plano para imóvel →</span>
+        </div>
+      </a>
+      <a href="#simulador" class="asset-card">
+        <div class="asset-media asset-media--auto"></div>
+        <div class="asset-body">
+          <h3>Automóveis de Alto Padrão</h3>
+          <p>Veículos nacionais e importados, zero quilômetro ou seminovos, além de frotas para empresas. Com a carta contemplada você negocia como comprador à vista e captura o desconto que o financiamento nunca oferece.</p>
+          <span class="asset-link">Quero um plano para automóvel →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section class="differentials" id="diferenciais">
+  <div class="container">
+    <p class="eyebrow center">Diferenciais</p>
+    <h2 class="section-title center">Por que uma consultoria muda o <span class="text-accent">resultado</span>.</h2>
+    <p class="section-lead center">Contratar uma cota é fácil. Contratar a cota certa, no grupo certo, com o lance certo. Isso exige método.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Consultoria personalizada</h3>
+        <p>Nenhum plano de prateleira. Cada estratégia nasce do seu objetivo, do seu prazo e da sua realidade financeira.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Análise de perfil financeiro</h3>
+        <p>Diagnóstico da capacidade de parcela e da reserva ideal para lance, antes de qualquer assinatura.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Acompanhamento completo</h3>
+        <p>Do primeiro boleto à escritura ou ao emplacamento. Assembleias monitoradas e relatórios do andamento do seu grupo.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Transparência total</h3>
+        <p>Custos, prazos, taxa de administração e fundo de reserva apresentados por escrito, sem letra miúda e sem promessa de contemplação.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Atendimento exclusivo</h3>
+        <p>Carteira limitada de clientes para garantir disponibilidade real e canal direto comigo, não com um call center.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">◆</div>
+        <h3>Estratégia de lances</h3>
+        <p>Leitura do histórico do grupo para definir o momento e o percentual de lance com maior probabilidade de sucesso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= DEPOIMENTOS ================= -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <p class="eyebrow eyebrow-light center">Depoimentos</p>
+    <h2 class="section-title light center">Quem já <span class="text-accent">conquistou</span>.</h2>
+
+    <div class="testi-carousel">
+      <div class="testi-track" id="testi-track">
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>Eu ia financiar o apartamento e só enxergava a parcela. O Lucas me mostrou o custo total dos 30 anos. Refizemos o plano com consórcio, fui contemplado por lance e comprei à vista com desconto.</p>
+          <div class="testi-author">
+            <strong>Ricardo Fontoura</strong>
+            <span>Empresário, Serra/ES</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>O que mais me marcou foi a honestidade. Ele analisou meu perfil e disse que, para o meu prazo, eu deveria ajustar o valor da carta. Ninguém tinha sido tão direto comigo antes.</p>
+          <div class="testi-author">
+            <strong>Ana Beatriz Coutinho</strong>
+            <span>Médica, Vila Velha/ES</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>Troquei de carro sem tirar dinheiro dos meus investimentos. O acompanhamento nas assembleias e a orientação sobre o lance fizeram toda a diferença no resultado final.</p>
+          <div class="testi-author">
+            <strong>Eduardo Tavares</strong>
+            <span>Investidor, Vitória/ES</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>Sempre achei que consórcio era loteria. O Lucas me mostrou os números, escolheu o grupo certo e consegui a contemplação por lance antes do que eu imaginava.</p>
+          <div class="testi-author">
+            <strong>Camila Rezende</strong>
+            <span>Advogada, Guarapari/ES</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>Usei a carta para quitar parte do financiamento da minha casa e reduzi muito o custo total. O acompanhamento pós-contemplação também fez toda a diferença.</p>
+          <div class="testi-author">
+            <strong>Marcos Villela</strong>
+            <span>Autônomo, Belo Horizonte/MG</span>
+          </div>
+        </div>
+        <div class="testi-card">
+          <span class="quote-mark">“</span>
+          <p>Comprei a sala comercial do meu consultório à vista com a carta contemplada. Negociei um desconto que jamais conseguiria financiando.</p>
+          <div class="testi-author">
+            <strong>Fernanda Almeida Lopes</strong>
+            <span>Dentista, Rio de Janeiro/RJ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="eyebrow center">Dúvidas Frequentes</p>
+    <h2 class="section-title center">Perguntas que todo <span class="text-accent">cliente</span> faz.</h2>
+
+    <div class="accordion" id="accordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger">O que é, exatamente, um consórcio? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>É uma modalidade de compra programada regulada pelo Banco Central e pela Lei 11.795/2008. Pessoas com o mesmo objetivo formam um grupo, contribuem mensalmente e, a cada assembleia, integrantes são contemplados com uma carta de crédito para adquirir o bem. Não existe cobrança de juros: o custo é a taxa de administração, informada antes da contratação.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Em quanto tempo eu sou contemplado? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>Não existe data garantida. Quem promete isso não está sendo honesto. A contemplação ocorre por sorteio ou por lance, nas assembleias mensais. O que a consultoria faz é aumentar as suas chances: escolhendo grupos com histórico favorável e planejando um lance estratégico compatível com a sua reserva.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">O que é a taxa de administração? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>É a remuneração da administradora pela gestão do grupo, diluída nas parcelas ao longo de todo o plano. Ela substitui os juros do financiamento e, no cômputo total, costuma representar um custo bem inferior. É um percentual conhecido e fixo desde a assinatura do contrato.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Como funciona o lance? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>O lance é uma antecipação de parcelas ofertada na assembleia: quem oferta o maior percentual é contemplado. Existem modalidades diferentes: lance livre (com recursos próprios), lance embutido (usando parte da própria carta de crédito) e lance fixo. Definir qual usar, quando e em que percentual é justamente onde a consultoria gera mais valor.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Consórcio é seguro? Meu dinheiro está protegido? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>Sim. As administradoras de consórcio são autorizadas e fiscalizadas pelo Banco Central do Brasil, que também audita os grupos. Os recursos do grupo são segregados do patrimônio da administradora. Trabalho apenas com administradoras sólidas e com histórico verificável.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">E se eu precisar desistir no meio do plano? <span>+</span></button>
+        <div class="accordion-panel">
+          <p>É possível transferir a cota a terceiros ou solicitar o cancelamento. Nesse caso, os valores pagos são devolvidos conforme as regras contratuais e o encerramento do grupo, com os descontos previstos em contrato. Avaliar esse cenário faz parte da análise de perfil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slice-divider"><button class="divider-arrow" type="button" aria-label="Rolar para a próxima seção"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button></div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="rodape">
+  <div class="container footer-inner">
+    <p class="footer-brand-name">LUCAS MATOS</p>
+    <p class="footer-tagline-caps">Planejamento patrimonial. Consórcio com estratégia.</p>
+
+    <nav class="footer-nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#rodape">Contato</a>
+    </nav>
+
+    <div class="footer-contact-row">
+      <a href="https://wa.me/5527998172712" target="_blank" rel="noopener" class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (27) 99817-2712
+      </a>
+      <span class="footer-dot">·</span>
+      <a href="mailto:contato@lucasmatosconsorcios.com.br" class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        contato@lucasmatosconsorcios.com.br
+      </a>
+      <span class="footer-dot">·</span>
+      <span class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Atendimento: Seg a sex, 09h às 18h
+      </span>
+    </div>
+
+    <p class="footer-address">
+      Torre Empresarial – Shopping Montserrat, Sala 510, Av. Eldes Scherrer Souza, nº 2162, Colina de Laranjeiras – Serra/ES, CEP: 29167-080
+    </p>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/eusoulucasmatos/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="https://www.facebook.com/lucasmatosconsorcios" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" aria-label="Google">
+        <img src="assets/img/google-icon-48.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="container footer-bottom">
+    <p class="footer-legal">© <span id="year"></span> Lucas Matos Consórcios. Todos os direitos reservados.</p>
+    <p class="footer-legal small">Consultoria independente. Não somos uma administradora de consórcios. A contratação da carta de crédito é feita junto a administradoras autorizadas pelo Banco Central.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp float button -->
+<a href="https://wa.me/5527998172712" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <img src="assets/img/whatsapp-icon-96.png" alt="" width="30" height="30">
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

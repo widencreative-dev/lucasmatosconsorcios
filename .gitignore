@@ -1,0 +1,17 @@
+# Lixo de sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# Dependências e build, se o projeto ganhar ferramentas depois
+node_modules/
+dist/
+.env
+.env.local
+
+# Editores
+.vscode/
+.idea/
+*.swp
