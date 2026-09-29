@@ -135,31 +135,15 @@ p{margin:0 0 1em;}
   border:1px solid rgba(255,255,255,.7);
   box-shadow:0 10px 34px rgba(0,0,0,.08);
 }
-.logo{display:flex;align-items:center;gap:10px;}
-.logo-mark{
-  width:38px;height:38px;
-  border-radius:11px;
-  background:var(--color-bg-dark);
-  color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-heading);
-  font-weight:700;
-  font-size:14px;
-  flex-shrink:0;
+.logo{display:flex;align-items:center;flex-shrink:0;}
+.logo-img{
+  height:28px;
+  width:auto;
+  display:block;
 }
-.logo-text{
-  font-family:var(--font-heading);
-  font-weight:700;
-  font-size:16px;
-  color:var(--color-text);
-  display:flex;flex-direction:column;line-height:1.1;
-  white-space:nowrap;
-}
-.logo-text small{
-  font-size:8.5px;
-  font-weight:600;
-  letter-spacing:.1em;
-  color:var(--color-accent);
+/* No mobile o logo divide a pílula com o botão do menu */
+@media (max-width:768px){
+  .logo-img{height:22px;}
 }
 .main-nav{display:flex;align-items:center;gap:26px;}
 .main-nav a{
@@ -217,6 +201,8 @@ p{margin:0 0 1em;}
   gap:56px;
   align-items:start;
 }
+/* min-width:auto deixaria um filho largo esticar a trilha 1fr além do container */
+.hero-copy,.hero-form-card{min-width:0;}
 .hero-copy h1{font-size:clamp(32px,4.2vw,44px);margin-bottom:20px;color:#fff;}
 .hero-text{color:rgba(255,255,255,.82);font-size:17px;max-width:560px;}
 .hero-actions{margin:24px 0 0;}
@@ -328,6 +314,9 @@ p{margin:0 0 1em;}
   font-size:18px;
   font-weight:600;
   color:#5c5a5a;
+  /* Sem isto o input mantém a largura intrínseca do size=20 (~249px),
+     que esticava o card e o grid do hero e gerava rolagem lateral em 360px */
+  width:0;
   min-width:0;
 }
 
@@ -1036,8 +1025,6 @@ a.footer-contact-item:hover{color:var(--color-accent);}
   border-color:rgba(255,255,255,.14);
   box-shadow:none;
 }
-.thanks-page .logo-text{color:#fff;}
-.thanks-page .logo-mark{background:var(--color-accent);}
 
 .thanks{padding:56px 0 72px;color:var(--color-text-light);}
 .thanks-inner{max-width:760px;margin:0 auto;text-align:center;}
@@ -1214,7 +1201,7 @@ a.footer-contact-item:hover{color:var(--color-accent);}
   .main-nav{gap:12px;}
   .main-nav a{font-size:10px;}
   .header-inner{padding-left:14px;padding-right:10px;}
-  .logo-text{font-size:14px;}
+  .logo-img{height:24px;}
 }
 
 @media (max-width:768px){
@@ -1282,6 +1269,17 @@ a.footer-contact-item:hover{color:var(--color-accent);}
   /* Badges da foto não cabem nowrap num container de ~312px */
   .photo-glass-badge{font-size:11.5px;padding:9px 12px;max-width:62%;white-space:normal;}
   .photo-glass-badge--5{font-size:12px;padding:10px 13px;}
+}
+
+/* ===================== TELAS MUITO ESTREITAS (<360px) ===================== */
+@media (max-width:359px){
+  /* Com white-space:nowrap o CTA longo do rodapé da seção não cabia em uma linha */
+  .btn{white-space:normal;padding-left:20px;padding-right:20px;text-align:center;}
+  .btn-sm{padding:9px 14px;font-size:13px;}
+
+  /* Logo + botão/hamburguer precisam caber juntos dentro da pílula */
+  .logo-img{height:20px;}
+  .header-inner{gap:10px;padding-left:14px;padding-right:10px;}
 }
 
 /* ===================== MOVIMENTO REDUZIDO ===================== */
